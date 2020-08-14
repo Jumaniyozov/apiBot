@@ -13,7 +13,9 @@ bot.command('/saysome', (ctx) => {
 // Set telegram webhook
 // get ngrok & ngrok.exe http 80
 
-// bot.telegram.setWebhook('<Your domain here>/secret-path')
+
+/* Domain must be secure supporting tls or https */
+// bot.telegram.setWebhook('https://<Your domain name here>/secret-path')
 
                             /* domain got by using ngrok */
 bot.telegram.setWebhook('https://63e9ea4ff0c2.ngrok.io/secret-path')
