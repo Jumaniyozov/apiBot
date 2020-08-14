@@ -9,13 +9,18 @@ bot.command('/saysome', (ctx) => {
     // Explicit usage
     ctx.reply('Watchuu say?');
 })
-// bot.on('text', ({ replyWithHTML }) => replyWithHTML('<b>Hello</b>'))
+
 // Set telegram webhook
 // get ngrok & ngrok.exe http 80
+
+// bot.telegram.setWebhook('<Your domain here>/secret-path')
+
+                            /* domain got by using ngrok */
 bot.telegram.setWebhook('https://63e9ea4ff0c2.ngrok.io/secret-path')
 
 const app = express()
 app.get('/', (req, res) => res.send('Hello fff!'))
+
 // Set the bot API endpoint
 app.use(bot.webhookCallback('/secret-path'))
 app.listen(80, () => {
